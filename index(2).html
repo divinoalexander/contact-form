@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form</title>
+<style>
+  /* Basic CSS for styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .form-group {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  input[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  input[type="submit"]:hover {
+    background: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <div class="form-group">
+      <label for="name">first name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="second">second name:</label>
+      <input type="text" id="second" name="second" required>
+    </div>
+    <div class="form-group">
+      <label for="email">email:</label>
+      <textarea id="email" name="email" rows="4" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="phoneno">phone no:</label>
+        <textarea id="int" name="phoneno" rows="4" required></textarea>
+      </div>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<script>
+  // JavaScript for form submission
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Get form values
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
+    
+    // You can do additional validation here
+    
+    // Send the form data to your server (you need to implement server-side handling)
+    console.log("Name: " + name);
+    console.log("Email: " + email);
+    console.log("Message: " + message);
+    
+    // Clear the form after submission
+    document.getElementById('contactForm').reset();
+  });
+</script>
+
+</body>
+</html>
